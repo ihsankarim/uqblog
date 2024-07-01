@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -31,7 +30,6 @@ public class Category {
     @Column(length = 255)
     private String description;
 
-    @OneToMany
-    @JoinColumn(name = "post_id")
+    @OneToMany(mappedBy = "category")
     private List<Post> posts;
 }
