@@ -13,7 +13,6 @@ import com.uqblog.serverapp.models.dtos.exceptions.UserServiceLogicException;
 import com.uqblog.serverapp.models.dtos.request.UserRequestDTO;
 import com.uqblog.serverapp.models.dtos.response.ApiResponse;
 import com.uqblog.serverapp.models.dtos.response.ApiResponseStatus;
-import com.uqblog.serverapp.models.entities.Role;
 import com.uqblog.serverapp.models.entities.User;
 import com.uqblog.serverapp.repositories.UserRepository;
 import com.uqblog.serverapp.services.UserService;
@@ -40,7 +39,7 @@ public class UserServiceImpl implements UserService {
             newUser.setUsername(userRequestDTO.getUsername());
             newUser.setPassword(userRequestDTO.getPassword());
             newUser.setEmail(userRequestDTO.getEmail());
-            newUser.setRoles(Role.USER);
+            // newUser.setRoles(Role.USER);
 
             userRepository.save(newUser);
 
